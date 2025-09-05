@@ -9,11 +9,43 @@
 // -Modify your Warrior class/struct to have a name field
 // -Make an array of 5 warriors each with unique names and output their name and health to the console using a for-loop!
 
+void IncrementByValue(int health)
+{
+	health++;
+}
+
+void IncrementByReference(int& health)
+{
+	health++;
+}
+
+
+struct Character
+{
+	int attack;
+	int defense;
+	float speed;
+	float critChance;
+};
+
+struct Warrior
+{
+	int health;
+	std::string name;
+};
+
 int main()
 {
-	std::string firstName = "Connor";
-	std::string lastName = "Smiley";
-	std::cout << "First name: " << firstName << " last name: " << lastName << std::endl;
+	Warrior hayden;
+	hayden.health = 99;
+	hayden.name = "Hayden";
+	
+	IncrementByValue(hayden.health);
+	IncrementByReference(hayden.health);
+
+	//std::string firstName = "Connor";
+	//std::string lastName = "Smiley";
+	//std::cout << "First name: " << firstName << " last name: " << lastName << std::endl;
 	return 0;
 }
 
