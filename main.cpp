@@ -21,17 +21,20 @@ void PushBack(int*& numbers, int number, int& size, int& capacity)
 
 	  newNumbers[3] = 420;
 
-	  delete[] numbers;
-
 	  numbers = newNumbers;
-		
+
+	  delete[] numbers;
 	}
 	// Add number to the back of numbers
+	
+	size++;
 }
 
 void PopBack(int& size)
 {
-	
+	// Implementation is up to you. Modify function parameters as you see fit!
+	// I recommend you simply decrement size (since size is independent of capacity).
+	size--;
 }
 
 int main()
@@ -58,63 +61,3 @@ int main()
 	// Tip: use the debugger to inspect local variables and memory!
 	return 0;
 }
-
-// Example2()
-// }
-//	std::vector<int> numbers;
-//	numbers.push_back(1);
-//	numbers.push_back(2);
-//	numbers.push_back(3);
-
-
-//	int front = numbers.front();
-//	int back = numbers.back();
-
-//	numbers.pop_back();
-//	numbers.pop_back();
-//	numbers.pop_back();
-
-
-// extra comments to remember
-
-// Resize increases both size and capacity
-// Reserve only increases the capacity
-
-// size = how many elements currently in the vector
-// capacity = how many elements the vector has room for
-// }
-// Example4()
-// {
-//	std::vector<int> numbers;
-//	for (int i = 0; i < 3000000; i++)
-//			numbers,push_back(i);
-
-//	for (int i = 0; i < 3000000; i++)
-//			numbers,pop_back(i);
-// }
-
-//reallocation example
-// Example5()
-// {
-//	int* numbers = new int[3];
-//	numbers[0] = 1;
-//	numbers[1] = 2;
-//	numbers[2] = 3;
-
-//	// *push_back(7) called*
-//	// 1) allocate new memory to fit new data-size
-//	   int* newNumbers = new int[4];
-
-//	// 2) copy old data to new memory
-//	for (int i = 0; i < 3; i++)
-//		newNumbers[i] = numbers[i];
-
-//	// 3) Add new data to new memory
-//  newNumbers[3] = 7;
-
-//  // 4) Delete old data once its been copied
-//  delete[] numbers;
-
-//  // 5) Update pointer to new memory
-//  numbers = newNumbers;
-// }
